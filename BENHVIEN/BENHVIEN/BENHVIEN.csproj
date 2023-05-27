@@ -122,6 +122,12 @@
     <Compile Include="FormVattu.Designer.cs">
       <DependentUpon>FormVattu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormYTa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormYTa.Designer.cs">
+      <DependentUpon>FormYTa.cs</DependentUpon>
+    </Compile>
     <Compile Include="HOSPITALDataSet.cs">
       <DependentUpon>HOSPITALDataSet.xsd</DependentUpon>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormVattu.resx">
       <DependentUpon>FormVattu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormYTa.resx">
+      <DependentUpon>FormYTa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
