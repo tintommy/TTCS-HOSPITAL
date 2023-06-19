@@ -13107,13 +13107,19 @@ SELECT MaVT, MoTa, DonGia FROM VATTU WHERE (MaVT = @MaVT)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "select MaGiuong, SoGiuong,SoPhong,Ten from GIUONGBENH g inner join KHUCHUATRI k o" +
                 "n g.SoKhu=k.SoKhu where MaGiuong not in (select MaGiuong from CT_BENHNHAN_GIUONG" +
                 ") ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "select MaGiuong, SoGiuong,SoPhong,Ten from GIUONGBENH g inner join KHUCHUATRI k o" +
+                "n g.SoKhu=k.SoKhu where MaGiuong not in (select MaGiuong from CT_BENHNHAN_GIUONG" +
+                " where NgayKT is null) ";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13135,6 +13141,30 @@ SELECT MaVT, MoTa, DonGia FROM VATTU WHERE (MaVT = @MaVT)";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual HOSPITALDataSet.GIUONGDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            HOSPITALDataSet.GIUONGDataTable dataTable = new HOSPITALDataSet.GIUONGDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByLoai(HOSPITALDataSet.GIUONGDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual HOSPITALDataSet.GIUONGDataTable GetDataBy() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             HOSPITALDataSet.GIUONGDataTable dataTable = new HOSPITALDataSet.GIUONGDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
