@@ -64,7 +64,7 @@ namespace BENHVIEN
             }
 
             txtMAGIUONG.Text = Program.maGiuong;
-            Program.maGiuong = "";
+            Program.maGiuong = null;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace BENHVIEN
             }
 
             txtMABN.Text = Program.maBN;
-            Program.maBN = "";
+            Program.maBN = null;
         }
 
         private void btnTHOAT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -238,7 +238,7 @@ namespace BENHVIEN
             undoList.Push(queryUndo);
 
 
-            if (MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này không ?", "Thông báo",
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa chi tiết này không ?", "Thông báo",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 try

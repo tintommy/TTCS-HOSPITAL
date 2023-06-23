@@ -104,6 +104,12 @@ namespace BENHVIEN
 
                 return false;
             }
+            if (txtYTT.Text == "")
+            {
+                MessageBox.Show("Không bỏ trống Y tá trưởng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return false;
+            }
 
 
 

@@ -20,17 +20,19 @@ namespace BENHVIEN.FormChon
         private void yTABindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.bdsYTA.EndEdit();
+            this.tHONGTINYTABindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.DS);
 
         }
 
         private void FormChonYTAcs_Load(object sender, EventArgs e)
         {
+         
+
             DS.EnforceConstraints = false;
 
-            this.yTATableAdapter.Connection.ConnectionString = Program.connstr;
-            this.yTATableAdapter.Fill(this.DS.YTA);
+            this.tHONGTINYTATableAdapter.Connection.ConnectionString = Program.connstr;
+            this.tHONGTINYTATableAdapter.Fill(this.DS.THONGTINYTA);
 
 
         }
@@ -42,7 +44,7 @@ namespace BENHVIEN.FormChon
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Program.maYT = ((DataRowView)bdsYTA.Current)["mayt"].ToString();
+            Program.maYT = ((DataRowView)tHONGTINYTABindingSource.Current)["mayt"].ToString();
            
             this.Dispose();
         }

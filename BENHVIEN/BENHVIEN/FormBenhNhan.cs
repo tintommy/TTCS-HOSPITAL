@@ -173,10 +173,12 @@ namespace BENHVIEN
             String ngaySinh = drv["NgaySinh"].ToString();
   
             int loai = (cbLOAI.Checked == true) ? 1 : 0;
-            String maBsTiepNhan = txtMABSTIEPNHAN.Text.ToString();
-            String maBsTheoDoi =  txtMABSTHEODOI.Text.ToString();
-
+            /*String maBsTiepNhan = txtMABSTIEPNHAN.Text.ToString();
+            String maBsTheoDoi =  txtMABSTHEODOI.Text.ToString();*/
+            string maBsTiepNhan = string.IsNullOrEmpty(txtMABSTIEPNHAN.Text) ? null : txtMABSTIEPNHAN.Text.ToString();
+            string maBsTheoDoi = string.IsNullOrEmpty(txtMABSTHEODOI.Text) ? null : txtMABSTHEODOI.Text.ToString();
           
+
             /*them moi | sua nhan vien*/
             {
                 DialogResult dr = MessageBox.Show("Bạn có chắc muốn ghi dữ liệu vào cơ sở dữ liệu ?", "Thông báo",
@@ -210,9 +212,33 @@ namespace BENHVIEN
                                 "WHERE MaBenhNhan = " + txtMABN.Text.Trim();
 */
                             this.bdsBENHNHAN.RemoveCurrent();
-                            string query =
-              string.Format("INSERT INTO DBO.BENHNHAN( Ho,Ten,NgaySinh,MaLoai,MaBacSiTheoDoi,MaBacSiTiepNhan)" +
-          "VALUES(N'{0}',N'{1}','{2}',{3},'{4}', '{5}')", ho, ten, ngaySinh, loai,maBsTheoDoi ,maBsTiepNhan);
+                            string query;
+
+                            if (maBsTheoDoi == null && maBsTiepNhan == null)
+                            {
+                                query =
+               string.Format("INSERT INTO DBO.BENHNHAN( Ho,Ten,NgaySinh,MaLoai)" +
+           "VALUES(N'{0}',N'{1}','{2}',{3})", ho, ten, ngaySinh, loai);
+                            }
+                            else if (maBsTheoDoi == null)
+                            {
+                                query =
+                 string.Format("INSERT INTO DBO.BENHNHAN( Ho,Ten,NgaySinh,MaLoai,MaBacSiTiepNhan)" +
+             "VALUES(N'{0}',N'{1}','{2}',{3},'{4}')", ho, ten, ngaySinh, loai, maBsTiepNhan);
+                            }
+                            else if (maBsTiepNhan == null)
+                            {
+                                query =
+                 string.Format("INSERT INTO DBO.BENHNHAN( Ho,Ten,NgaySinh,MaLoai,MaBacSiTheoDoi)" +
+             "VALUES(N'{0}',N'{1}','{2}',{3},'{4}')", ho, ten, ngaySinh, loai, maBsTheoDoi);
+                            }
+                            else
+                            {
+                                query =
+           string.Format("INSERT INTO DBO.BENHNHAN( Ho,Ten,NgaySinh,MaLoai,MaBacSiTheoDoi,MaBacSiTiepNhan)" +
+       "VALUES(N'{0}',N'{1}','{2}',{3},'{4}', '{5}')", ho, ten, ngaySinh, loai, maBsTheoDoi, maBsTiepNhan);
+                            }
+                           
                             int n = Program.ExecSqlNonQuery(query);
 
                         }
@@ -229,21 +255,61 @@ namespace BENHVIEN
                             ngaySinh = drv["NgaySinh"].ToString();
 
                             loai = (cbLOAI.Checked == true) ? 1 : 0;
-                             maBsTiepNhan = drv["MaBacSiTiepNhan"].ToString();
-                             maBsTheoDoi = drv["MaBacSiTheoDoi"].ToString();
-
-                            queryUndo =
+                           
+                             maBsTiepNhan = string.IsNullOrEmpty(drv["MaBacSiTiepNhan"].ToString()) ? null : drv["MaBacSiTiepNhan"].ToString();
+                             maBsTheoDoi = string.IsNullOrEmpty(drv["MaBacSiTheoDoi"].ToString()) ? null : drv["MaBacSiTheoDoi"].ToString();
+                            if (maBsTheoDoi == null && maBsTiepNhan == null)
+                            {
+                                queryUndo =
+                               "UPDATE DBO.BENHNHAN " +
+                               "SET " +
+                               "HO = '" + ho + "'," +
+                               "TEN = '" + ten + "'," +
+                               "NGAYSINH = '" + ngaySinh + "'," +
+                               "MaLoai = " + loai + 
+                               "WHERE MaBenhNhan = '" + maBN + "'";
+                            }
+                            else if (maBsTheoDoi == null)
+                            {
+                                queryUndo =
+                               "UPDATE DBO.BENHNHAN " +
+                               "SET " +
+                               "HO = '" + ho + "'," +
+                               "TEN = '" + ten + "'," +
+                               "NGAYSINH = '" + ngaySinh + "'," +
+                               "MaLoai = " + loai + "," +
+         
+                                "MaBacSiTiepNhan = '" + maBsTiepNhan + "'" +
+                               "WHERE MaBenhNhan = '" + maBN + "'";
+                            }
+                            else if (maBsTiepNhan == null)
+                            {
+                                queryUndo =
                                 "UPDATE DBO.BENHNHAN " +
                                 "SET " +
                                 "HO = '" + ho + "'," +
-                                "TEN = '" + ten + "'," +                         
-                                "NGAYSINH = '" + ngaySinh+ "'," +
+                                "TEN = '" + ten + "'," +
+                                "NGAYSINH = '" + ngaySinh + "'," +
+                                "MaLoai = " + loai + "," +
+                                "MaBacSiTheoDoi = '" + maBsTheoDoi + "'" +
+                                
+                                "WHERE MaBenhNhan = '" + maBN + "'";
+                            }
+                            else
+                            {
+                                queryUndo =
+                                "UPDATE DBO.BENHNHAN " +
+                                "SET " +
+                                "HO = '" + ho + "'," +
+                                "TEN = '" + ten + "'," +
+                                "NGAYSINH = '" + ngaySinh + "'," +
                                 "MaLoai = " + loai + "," +
                                 "MaBacSiTheoDoi = '" + maBsTheoDoi + "'," +
                                  "MaBacSiTiepNhan = '" + maBsTiepNhan + "'" +
                                 "WHERE MaBenhNhan = '" + maBN + "'";
+                            }
 
-                          
+
 
 
                             this.bdsBENHNHAN.EndEdit();
@@ -299,8 +365,8 @@ namespace BENHVIEN
             DateTime ngaySinh = ((DateTime)drv["NgaySinh"]);
 
             int loai = (cbLOAI.Checked == true) ? 1 : 0;
-            String maBsTiepNhan = txtMABSTIEPNHAN.Text.ToString();
-            String maBsTheoDoi = txtMABSTHEODOI.Text.ToString();
+            string maBsTiepNhan = string.IsNullOrEmpty(txtMABSTIEPNHAN.Text) ? null : txtMABSTIEPNHAN.Text.ToString();
+            string maBsTheoDoi = string.IsNullOrEmpty(txtMABSTHEODOI.Text) ? null : txtMABSTHEODOI.Text.ToString();
 
 
             if (bdsBENHNHAN.Count == 0)
@@ -320,9 +386,36 @@ namespace BENHVIEN
                 return;
             }
 
-            string queryUndo =
-string.Format("INSERT INTO DBO.BENHNHAN( MaBenhNhan,Ho,Ten,NgaySinh,MaLoai,MaBacSiTheoDoi,MaBacSiTiepNhan)" +
-"VALUES('{0}',N'{1}',N'{2}','{3}',{4}, '{5}','{6}')",maBN, ho, ten, ngaySinh, loai, maBsTheoDoi, maBsTiepNhan);
+            string queryUndo = null;
+
+
+
+
+            if (maBsTheoDoi == null && maBsTiepNhan == null)
+            {
+                queryUndo =
+string.Format("INSERT INTO DBO.BENHNHAN( Ho,Ten,NgaySinh,MaLoai)" +
+"VALUES(N'{0}',N'{1}','{2}',{3})", ho, ten, ngaySinh, loai);
+            }
+            else if (maBsTheoDoi == null)
+            {
+                queryUndo =
+ string.Format("INSERT INTO DBO.BENHNHAN( Ho,Ten,NgaySinh,MaLoai,MaBacSiTiepNhan)" +
+"VALUES(N'{0}',N'{1}','{2}',{3},'{4}')", ho, ten, ngaySinh, loai, maBsTiepNhan);
+            }
+            else if (maBsTiepNhan == null)
+            {
+                queryUndo =
+ string.Format("INSERT INTO DBO.BENHNHAN( Ho,Ten,NgaySinh,MaLoai,MaBacSiTheoDoi)" +
+"VALUES(N'{0}',N'{1}','{2}',{3},'{4}')", ho, ten, ngaySinh, loai, maBsTheoDoi);
+            }
+            else
+            {
+                queryUndo =
+string.Format("INSERT INTO DBO.BENHNHAN( Ho,Ten,NgaySinh,MaLoai,MaBacSiTheoDoi,MaBacSiTiepNhan)" +
+"VALUES(N'{0}',N'{1}','{2}',{3},'{4}', '{5}')", ho, ten, ngaySinh, loai, maBsTheoDoi, maBsTiepNhan);
+            }
+
 
             undoList.Push(queryUndo);
 

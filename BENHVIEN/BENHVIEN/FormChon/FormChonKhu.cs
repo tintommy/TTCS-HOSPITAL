@@ -38,6 +38,8 @@ namespace BENHVIEN.FormChon
         {
             string maKhu = ((DataRowView)kHUCHUATRIBindingSource.Current)["sokhu"].ToString();
             Program.maKhu = maKhu;
+            string tenKhu = ((DataRowView)kHUCHUATRIBindingSource.Current)["ten"].ToString();
+            Program.tenKhu = tenKhu;
             this.Dispose();
         }
 

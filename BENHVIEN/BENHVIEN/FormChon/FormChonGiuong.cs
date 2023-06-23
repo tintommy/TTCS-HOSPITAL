@@ -21,7 +21,7 @@ namespace BENHVIEN.FormChon
         {
             DS.EnforceConstraints = false;
             this.gIUONGTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.gIUONGTableAdapter.Fill(this.DS.GIUONG);
+            this.gIUONGTableAdapter.FillByDaChon(this.DS.GIUONG);
         }
 
         private void button1_Click(object sender, EventArgs e)
