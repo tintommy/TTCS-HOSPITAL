@@ -117,6 +117,7 @@
             this.colMaBenhNhan.FieldName = "MaBenhNhan";
             this.colMaBenhNhan.MinWidth = 39;
             this.colMaBenhNhan.Name = "colMaBenhNhan";
+            this.colMaBenhNhan.OptionsColumn.ReadOnly = true;
             this.colMaBenhNhan.Visible = true;
             this.colMaBenhNhan.VisibleIndex = 0;
             this.colMaBenhNhan.Width = 146;
@@ -126,6 +127,7 @@
             this.colHOTEN.FieldName = "HOTEN";
             this.colHOTEN.MinWidth = 39;
             this.colHOTEN.Name = "colHOTEN";
+            this.colHOTEN.OptionsColumn.ReadOnly = true;
             this.colHOTEN.Visible = true;
             this.colHOTEN.VisibleIndex = 1;
             this.colHOTEN.Width = 146;
@@ -135,6 +137,7 @@
             this.colNgaySinh.FieldName = "NgaySinh";
             this.colNgaySinh.MinWidth = 39;
             this.colNgaySinh.Name = "colNgaySinh";
+            this.colNgaySinh.OptionsColumn.ReadOnly = true;
             this.colNgaySinh.Visible = true;
             this.colNgaySinh.VisibleIndex = 2;
             this.colNgaySinh.Width = 146;
@@ -144,6 +147,7 @@
             this.colMaLoai.FieldName = "MaLoai";
             this.colMaLoai.MinWidth = 39;
             this.colMaLoai.Name = "colMaLoai";
+            this.colMaLoai.OptionsColumn.ReadOnly = true;
             this.colMaLoai.Visible = true;
             this.colMaLoai.VisibleIndex = 3;
             this.colMaLoai.Width = 146;
@@ -153,6 +157,7 @@
             this.colMaBacSiTheoDoi.FieldName = "MaBacSiTheoDoi";
             this.colMaBacSiTheoDoi.MinWidth = 39;
             this.colMaBacSiTheoDoi.Name = "colMaBacSiTheoDoi";
+            this.colMaBacSiTheoDoi.OptionsColumn.ReadOnly = true;
             this.colMaBacSiTheoDoi.Visible = true;
             this.colMaBacSiTheoDoi.VisibleIndex = 4;
             this.colMaBacSiTheoDoi.Width = 146;

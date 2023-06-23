@@ -41,9 +41,9 @@
     <Reference Include="DevExpress.Sparkline.v22.2.Core" />
     <Reference Include="DevExpress.XtraEditors.v22.2" />
     <Reference Include="DevExpress.Drawing.v22.2" />
-    <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -86,6 +86,12 @@
     <Compile Include="FormChon\FormChonBenhNhan.Designer.cs">
       <DependentUpon>FormChonBenhNhan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormChon\FormChonBenhNhanChuaTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChon\FormChonBenhNhanChuaTri.Designer.cs">
+      <DependentUpon>FormChonBenhNhanChuaTri.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormChon\FormChonGiuong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,11 +110,29 @@
     <Compile Include="FormChon\FormChonNhanVien.Designer.cs">
       <DependentUpon>FormChonNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormChon\FormChonSuChuaTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChon\FormChonSuChuaTri.Designer.cs">
+      <DependentUpon>FormChonSuChuaTri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChon\FormChonVatTu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChon\FormChonVatTu.Designer.cs">
+      <DependentUpon>FormChonVatTu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormChon\FormChonYTAcs.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormChon\FormChonYTAcs.Designer.cs">
       <DependentUpon>FormChonYTAcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChuaTriChoBenhNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChuaTriChoBenhNhan.Designer.cs">
+      <DependentUpon>FormChuaTriChoBenhNhan.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCTNV_KCT.cs">
       <SubType>Form</SubType>
@@ -189,6 +213,9 @@
     <EmbeddedResource Include="FormChon\FormChonBenhNhan.resx">
       <DependentUpon>FormChonBenhNhan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormChon\FormChonBenhNhanChuaTri.resx">
+      <DependentUpon>FormChonBenhNhanChuaTri.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormChon\FormChonGiuong.resx">
       <DependentUpon>FormChonGiuong.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,8 +225,17 @@
     <EmbeddedResource Include="FormChon\FormChonNhanVien.resx">
       <DependentUpon>FormChonNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormChon\FormChonSuChuaTri.resx">
+      <DependentUpon>FormChonSuChuaTri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChon\FormChonVatTu.resx">
+      <DependentUpon>FormChonVatTu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormChon\FormChonYTAcs.resx">
       <DependentUpon>FormChonYTAcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChuaTriChoBenhNhan.resx">
+      <DependentUpon>FormChuaTriChoBenhNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCTNV_KCT.resx">
       <DependentUpon>FormCTNV_KCT.cs</DependentUpon>

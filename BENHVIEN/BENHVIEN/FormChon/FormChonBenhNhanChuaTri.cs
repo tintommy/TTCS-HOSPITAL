@@ -44,9 +44,10 @@ namespace BENHVIEN
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string maBN = ((DataRowView)SP_ChonBenhNhanChuaTriBDS.Current)["MaBenhNhan"].ToString();
-            Program.maBNCanChua = maBN;
+            Program.maBNCanChua = ((DataRowView)SP_ChonBenhNhanChuaTriBDS.Current)["MaBenhNhan"].ToString();
+            Program.hoTenBNCanChua = ((DataRowView)SP_ChonBenhNhanChuaTriBDS.Current)["HOTEN"].ToString();
             this.Dispose();
+            Program.formMain.showFormChuaTriBenhNhan();
         }
     }
 }

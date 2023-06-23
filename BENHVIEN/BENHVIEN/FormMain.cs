@@ -59,7 +59,7 @@ namespace BENHVIEN
 
         }
 
-        private Form CheckExists(Type ftype)
+        public Form CheckExists(Type ftype)
         {
             foreach (Form f in this.MdiChildren)
                 if (f.GetType() == ftype)
@@ -211,6 +211,21 @@ namespace BENHVIEN
             {
                 FormYTa form = new FormYTa();
                 form.MdiParent = this;
+                form.Show();
+            }
+        }
+        public void showFormChuaTriBenhNhan()
+        {
+            Form f = CheckExists(typeof(FormChuaTriChoBenhNhan));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                FormChuaTriChoBenhNhan form = new FormChuaTriChoBenhNhan();
+                form.MdiParent = this;
+                form.Activate();
                 form.Show();
             }
         }

@@ -82,8 +82,10 @@ namespace BENHVIEN
          */
         //-------------------------------
         public static String maBNCanChua = "";
+        public static String hoTenBNCanChua = "";
         public static String maSCTApDung = "";
-
+        public static String maVTApDung = "";
+        public static String donGiaVTApDUng = "";
         /*
          * mở kết nối tới server 
          * @return trả về 1 nếu thành công
@@ -110,6 +112,30 @@ namespace BENHVIEN
 
                 return 0;
             }
+        }
+        public static String convertToSqlDate(String date)
+        {//01-01-2902
+            string[] result = date.Split(' ');
+            string d = result[0];
+            string[] temp = d.Split('/');
+
+            string dd =temp[0];
+            string mm =temp[1];
+            string yyyy =temp[2];
+
+            return mm+'/'+dd+'/'+yyyy;
+        }
+        public static String formatSpinEdit(String num)
+        {
+            if (num[num.Length-1] == ',')
+            {
+                num =num.Replace(',', ' ');
+            }
+            else
+            {
+                num = num.Replace(',', '.');
+            }
+            return num;
         }
 
 
