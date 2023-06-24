@@ -87,7 +87,13 @@ namespace BENHVIEN
         public static String maSCTApDung = "";
         public static String maVTApDung = "";
         public static String donGiaVTApDUng = "";
+        //Biến dùng để tương tác với form của nhân viên
+        public static String maBNCanInHD = "";
+        public static String hoTenBNCanInHD = "";
+        //public static int maCTBSCTBNInHoaDon = 0;
         /*
+         * 
+         * 
          * mở kết nối tới server 
          * @return trả về 1 nếu thành công
          *         trả về 0 nếu thất bại

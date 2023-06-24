@@ -54,6 +54,7 @@
             this.txtTAIKHOAN.Name = "txtTAIKHOAN";
             this.txtTAIKHOAN.Size = new System.Drawing.Size(197, 27);
             this.txtTAIKHOAN.TabIndex = 1;
+            this.txtTAIKHOAN.Text = "nv0001";
             // 
             // txtMATKHAU
             // 
@@ -63,6 +64,7 @@
             this.txtMATKHAU.PasswordChar = '*';
             this.txtMATKHAU.Size = new System.Drawing.Size(197, 27);
             this.txtMATKHAU.TabIndex = 3;
+            this.txtMATKHAU.Text = "123456";
             // 
             // label2
             // 
