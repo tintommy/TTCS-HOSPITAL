@@ -57,6 +57,7 @@ namespace BENHVIEN
             int maCTBSCTBN =int.Parse(drv["MaCTBSCTBN"].ToString());
             ReportSLVTDaSuDungChoViecChuaTri report = new ReportSLVTDaSuDungChoViecChuaTri(maCTBSCTBN);
             report.xrLabel2.Text = maCTBSCTBN.ToString();
+
             ReportPrintTool print = new ReportPrintTool(report);
             print.ShowPreviewDialog();
         }
