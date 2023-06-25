@@ -1,4 +1,6 @@
 ﻿using BENHVIEN.FormChon;
+using BENHVIEN.Report;
+using DevExpress.XtraReports.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,6 +49,21 @@ namespace BENHVIEN
                 txtHoTen.Text = Program.hoTenBNCanInHD;
                 this.SP_ChuaTriBenhNhanTableAdapter.Fill(DS.SP_ChuaTriBenhNhan, Program.maBNCanInHD);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataRowView drv = ((DataRowView)SP_ChuaTriBenhNhanBDS[SP_ChuaTriBenhNhanBDS.Position]);
+            int maCTBSCTBN =int.Parse(drv["MaCTBSCTBN"].ToString());
+            ReportSLVTDaSuDungChoViecChuaTri report = new ReportSLVTDaSuDungChoViecChuaTri(maCTBSCTBN);
+            report.xrLabel2.Text = maCTBSCTBN.ToString();
+            ReportPrintTool print = new ReportPrintTool(report);
+            print.ShowPreviewDialog();
+        }
+
+        private void txtHoTen_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

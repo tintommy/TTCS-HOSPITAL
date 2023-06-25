@@ -41,27 +41,27 @@
             this.colThoiGianChuaTri = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKetQua = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.txtHoTen = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.SP_ChuaTriBenhNhanTableAdapter = new BENHVIEN.HOSPITALDataSetTableAdapters.SP_ChuaTriBenhNhanTableAdapter();
             this.tableAdapterManager = new BENHVIEN.HOSPITALDataSetTableAdapters.TableAdapterManager();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SP_ChuaTriBenhNhanBDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -179,6 +179,16 @@
             this.panel1.Size = new System.Drawing.Size(844, 139);
             this.panel1.TabIndex = 1;
             // 
+            // panel4
+            // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel4.Controls.Add(this.txtHoTen);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Location = new System.Drawing.Point(254, 65);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(337, 42);
+            this.panel4.TabIndex = 4;
+            // 
             // txtHoTen
             // 
             this.txtHoTen.Location = new System.Drawing.Point(86, 16);
@@ -186,6 +196,7 @@
             this.txtHoTen.Properties.ReadOnly = true;
             this.txtHoTen.Size = new System.Drawing.Size(238, 22);
             this.txtHoTen.TabIndex = 3;
+            this.txtHoTen.EditValueChanged += new System.EventHandler(this.txtHoTen_EditValueChanged);
             this.txtHoTen.Click += new System.EventHandler(this.txtHoTen_Click);
             // 
             // label2
@@ -217,6 +228,16 @@
             this.panel2.Size = new System.Drawing.Size(844, 103);
             this.panel2.TabIndex = 2;
             // 
+            // panel5
+            // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.button1);
+            this.panel5.Location = new System.Drawing.Point(288, 24);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(273, 56);
+            this.panel5.TabIndex = 2;
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(174, 15);
@@ -229,12 +250,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(24, 15);
+            this.button1.Location = new System.Drawing.Point(19, 15);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Preview";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -267,26 +289,6 @@
             this.tableAdapterManager.VATTUTableAdapter = null;
             this.tableAdapterManager.YTATableAdapter = null;
             // 
-            // panel4
-            // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel4.Controls.Add(this.txtHoTen);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(254, 65);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(337, 42);
-            this.panel4.TabIndex = 4;
-            // 
-            // panel5
-            // 
-            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel5.Controls.Add(this.button2);
-            this.panel5.Controls.Add(this.button1);
-            this.panel5.Location = new System.Drawing.Point(288, 24);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(273, 56);
-            this.panel5.TabIndex = 2;
-            // 
             // FormHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -305,12 +307,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.DS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

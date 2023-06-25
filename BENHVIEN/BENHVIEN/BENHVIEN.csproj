@@ -272,6 +272,12 @@
     <Compile Include="Report\ReportBNNoiTruTheoThangTheoKhu.Designer.cs">
       <DependentUpon>ReportBNNoiTruTheoThangTheoKhu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\ReportSLVTDaSuDungChoViecChuaTri.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ReportSLVTDaSuDungChoViecChuaTri.Designer.cs">
+      <DependentUpon>ReportSLVTDaSuDungChoViecChuaTri.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormBacSi.resx">
       <DependentUpon>FormBacSi.cs</DependentUpon>
     </EmbeddedResource>
@@ -377,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\ReportBNNoiTruTheoThangTheoKhu.resx">
       <DependentUpon>ReportBNNoiTruTheoThangTheoKhu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportSLVTDaSuDungChoViecChuaTri.resx">
+      <DependentUpon>ReportSLVTDaSuDungChoViecChuaTri.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="HOSPITALDataSet.xsc">

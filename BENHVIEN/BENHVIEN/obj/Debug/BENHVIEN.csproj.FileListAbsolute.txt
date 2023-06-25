@@ -331,3 +331,4 @@ C:\Users\Acer\Desktop\NguyenQuangNghiaVoLongTuADenZ\TTCS-HOSPITAL\BENHVIEN\BENHV
 C:\Users\Acer\Desktop\NguyenQuangNghiaVoLongTuADenZ\TTCS-HOSPITAL\BENHVIEN\BENHVIEN\obj\Debug\BENHVIEN.FormChon.FormChonVatTu.resources
 C:\Users\Acer\Desktop\NguyenQuangNghiaVoLongTuADenZ\TTCS-HOSPITAL\BENHVIEN\BENHVIEN\obj\Debug\BENHVIEN.FormHoaDon.resources
 C:\Users\Acer\Desktop\NguyenQuangNghiaVoLongTuADenZ\TTCS-HOSPITAL\BENHVIEN\BENHVIEN\obj\Debug\BENHVIEN.FormChon.FormChonBenhNhanInHoaDon.resources
+C:\Users\Acer\Desktop\NguyenQuangNghiaVoLongTuADenZ\TTCS-HOSPITAL\BENHVIEN\BENHVIEN\obj\Debug\BENHVIEN.Report.ReportSLVTDaSuDungChoViecChuaTri.resources
