@@ -166,6 +166,12 @@
     <Compile Include="FormGiuong.Designer.cs">
       <DependentUpon>FormGiuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormHenGioBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHenGioBackup.Designer.cs">
+      <DependentUpon>FormHenGioBackup.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormKCT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGiuong.resx">
       <DependentUpon>FormGiuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHenGioBackup.resx">
+      <DependentUpon>FormHenGioBackup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormKCT.resx">
       <DependentUpon>FormKCT.cs</DependentUpon>

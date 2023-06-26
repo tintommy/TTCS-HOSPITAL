@@ -48,11 +48,13 @@
             this.btnTAOTK = new DevExpress.XtraBars.BarButtonItem();
             this.btnBACKUP = new DevExpress.XtraBars.BarButtonItem();
             this.btnRESTORE = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHENGIO = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pageNV = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pageBS = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -99,10 +101,11 @@
             this.barButtonItem11,
             this.btnTAOTK,
             this.btnBACKUP,
-            this.btnRESTORE});
+            this.btnRESTORE,
+            this.btnHENGIO});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.ribbonControl1.MaxItemId = 19;
+            this.ribbonControl1.MaxItemId = 20;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 601;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -258,13 +261,23 @@
             this.btnRESTORE.Name = "btnRESTORE";
             this.btnRESTORE.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick_1);
             // 
+            // btnHENGIO
+            // 
+            this.btnHENGIO.Caption = "Hẹn giờ BACKUP";
+            this.btnHENGIO.Enabled = false;
+            this.btnHENGIO.Id = 19;
+            this.btnHENGIO.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHENGIO.ImageOptions.SvgImage")));
+            this.btnHENGIO.Name = "btnHENGIO";
+            this.btnHENGIO.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick_2);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup12,
             this.ribbonPageGroup13,
-            this.ribbonPageGroup14});
+            this.ribbonPageGroup14,
+            this.ribbonPageGroup15});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Hệ Thống";
             // 
@@ -288,6 +301,11 @@
             // 
             this.ribbonPageGroup14.ItemLinks.Add(this.btnRESTORE);
             this.ribbonPageGroup14.Name = "ribbonPageGroup14";
+            // 
+            // ribbonPageGroup15
+            // 
+            this.ribbonPageGroup15.ItemLinks.Add(this.btnHENGIO);
+            this.ribbonPageGroup15.Name = "ribbonPageGroup15";
             // 
             // pageNV
             // 
@@ -474,6 +492,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup13;
         private DevExpress.XtraBars.BarButtonItem btnRESTORE;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
+        private DevExpress.XtraBars.BarButtonItem btnHENGIO;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
     }
 }
 
