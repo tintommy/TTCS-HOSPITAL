@@ -648,7 +648,7 @@ namespace BENHVIEN
             string queryUndo = string.Format("INSERT INTO DBO.CT_HOADON VALUES('{0}', (SELECT MaCTBSCTBN FROM CT_BACSI_CHUATRI_BENHNHAN WHERE MaBacSi = '{1}' " +
                 "AND MaBenhNhan = '{2}' AND MaSuChuaTri = '{3}' AND NgayChuaTri = '{4}'), " +
                 "{5}, {6}, '{7}')",
-                txtMaVT.Text, Program.userName, Program.maBNCanChua, txtMaSCT.Text, ngayChuaTriDateEdit.Text, Program.formatSpinEdit(soLuongSpinEdit.Text), thoiGianDateEdit.Text);
+                txtMaVT.Text, Program.userName, Program.maBNCanChua, txtMaSCT.Text, ngayChuaTriDateEdit.Text, Program.formatSpinEdit(soLuongSpinEdit.Text), Program.formatSpinEdit(donGiaSpinEdit.Text),thoiGianDateEdit.Text);
             CT_HoaDonBDS.RemoveCurrent();
 
             CT_HoaDonTableAdapter.Update(DS.CT_HOADON);

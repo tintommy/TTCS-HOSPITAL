@@ -959,26 +959,26 @@
             this.btnXoaVatTu,
             this.btnHieuChinhVatTu});
             this.contextMenuStrip.Name = "contextMenuStrip1";
-            this.contextMenuStrip.Size = new System.Drawing.Size(158, 76);
+            this.contextMenuStrip.Size = new System.Drawing.Size(211, 104);
             // 
             // btnThemVatTu
             // 
             this.btnThemVatTu.Name = "btnThemVatTu";
-            this.btnThemVatTu.Size = new System.Drawing.Size(157, 24);
+            this.btnThemVatTu.Size = new System.Drawing.Size(210, 24);
             this.btnThemVatTu.Text = "Thêm vật tư";
             this.btnThemVatTu.Click += new System.EventHandler(this.btnThemVatTu_Click);
             // 
             // btnXoaVatTu
             // 
             this.btnXoaVatTu.Name = "btnXoaVatTu";
-            this.btnXoaVatTu.Size = new System.Drawing.Size(157, 24);
+            this.btnXoaVatTu.Size = new System.Drawing.Size(210, 24);
             this.btnXoaVatTu.Text = "Xóa vật tư";
             this.btnXoaVatTu.Click += new System.EventHandler(this.btnXoaVatTu_Click);
             // 
             // btnHieuChinhVatTu
             // 
             this.btnHieuChinhVatTu.Name = "btnHieuChinhVatTu";
-            this.btnHieuChinhVatTu.Size = new System.Drawing.Size(157, 24);
+            this.btnHieuChinhVatTu.Size = new System.Drawing.Size(210, 24);
             this.btnHieuChinhVatTu.Text = "Hiệu chỉnh";
             this.btnHieuChinhVatTu.Click += new System.EventHandler(this.btnHieuChinhVatTu_Click);
             // 
