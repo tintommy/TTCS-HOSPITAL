@@ -14,10 +14,10 @@ namespace BENHVIEN
 {
     public partial class FormBenhNhan : Form
     {
-        int viTri=0;
+        int viTri = 0;
         bool dangThemMoi = false;
         Stack undoList = new Stack();
-        int viTriThem=0;
+        int viTriThem = 0;
         public FormBenhNhan()
         {
             InitializeComponent();
@@ -48,7 +48,7 @@ namespace BENHVIEN
 
         private void FormBenhNhan_Load(object sender, EventArgs e)
         {
-           
+
             DS.EnforceConstraints = false;
 
             this.bENHNHANTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -75,7 +75,7 @@ namespace BENHVIEN
 
 
 
-          
+
             this.btnTHEM.Enabled = false;
             this.btnXOA.Enabled = false;
             this.btnLUU.Enabled = true;
@@ -165,19 +165,19 @@ namespace BENHVIEN
 
             /*Lay du lieu truoc khi chon btnGHI - phuc vu UNDO - sau khi OK thi da la du lieu moi*/
             DataRowView drv = ((DataRowView)bdsBENHNHAN[bdsBENHNHAN.Position]);
-         
-          
+
+
             String ho = txtHO.Text.ToString();
             String ten = txtTEN.Text.ToString();
 
             String ngaySinh = drv["NgaySinh"].ToString();
-  
+
             int loai = (cbLOAI.Checked == true) ? 1 : 0;
             /*String maBsTiepNhan = txtMABSTIEPNHAN.Text.ToString();
             String maBsTheoDoi =  txtMABSTHEODOI.Text.ToString();*/
             string maBsTiepNhan = string.IsNullOrEmpty(txtMABSTIEPNHAN.Text) ? null : txtMABSTIEPNHAN.Text.ToString();
             string maBsTheoDoi = string.IsNullOrEmpty(txtMABSTHEODOI.Text) ? null : txtMABSTHEODOI.Text.ToString();
-          
+
 
             /*them moi | sua nhan vien*/
             {
@@ -187,8 +187,8 @@ namespace BENHVIEN
                 {
                     try
                     {
-                        
-                      /*  this.bENHNHANTableAdapter.Update(this.DS.BENHNHAN);*/
+
+                        /*  this.bENHNHANTableAdapter.Update(this.DS.BENHNHAN);*/
 
 
                         /*lưu câu truy vấn để hoàn tác*/
@@ -207,27 +207,27 @@ namespace BENHVIEN
                             {
                                 query =
                string.Format("INSERT INTO DBO.BENHNHAN( Ho,Ten,NgaySinh,MaLoai)" +
-           "VALUES(N'{0}',N'{1}','{2}',{3})", ho, ten, Program.convertToSqlDate(ngaySinh), loai);
+           "VALUES(N'{0}',N'{1}','{2}',{3})", ho, ten, ngaySinh, loai);
                             }
                             else if (maBsTheoDoi == null)
                             {
                                 query =
                  string.Format("INSERT INTO DBO.BENHNHAN( Ho,Ten,NgaySinh,MaLoai,MaBacSiTiepNhan)" +
-             "VALUES(N'{0}',N'{1}','{2}',{3},'{4}')", ho, ten, Program.convertToSqlDate(ngaySinh), loai, maBsTiepNhan);
+             "VALUES(N'{0}',N'{1}','{2}',{3},'{4}')", ho, ten, ngaySinh, loai, maBsTiepNhan);
                             }
                             else if (maBsTiepNhan == null)
                             {
                                 query =
                  string.Format("INSERT INTO DBO.BENHNHAN( Ho,Ten,NgaySinh,MaLoai,MaBacSiTheoDoi)" +
-             "VALUES(N'{0}',N'{1}','{2}',{3},'{4}')", ho, ten, Program.convertToSqlDate(ngaySinh), loai, maBsTheoDoi);
+             "VALUES(N'{0}',N'{1}','{2}',{3},'{4}')", ho, ten, ngaySinh, loai, maBsTheoDoi);
                             }
                             else
                             {
                                 query =
            string.Format("INSERT INTO DBO.BENHNHAN( Ho,Ten,NgaySinh,MaLoai,MaBacSiTheoDoi,MaBacSiTiepNhan)" +
-       "VALUES(N'{0}',N'{1}','{2}',{3},'{4}', '{5}')", ho, ten, Program.convertToSqlDate(ngaySinh), loai, maBsTheoDoi, maBsTiepNhan);
+       "VALUES(N'{0}',N'{1}','{2}',{3},'{4}', '{5}')", ho, ten, ngaySinh, loai, maBsTheoDoi, maBsTiepNhan);
                             }
-                           
+
                             int n = Program.ExecSqlNonQuery(query);
                             if (n == 0)
                             {
@@ -248,29 +248,31 @@ namespace BENHVIEN
 
                         else
                         {
-                         
-                            String maBN = drv["MaBenhNhan"].ToString().Trim();// Trim() de loai bo khoang trang thua
-                          
 
-                             ho = drv["HO"].ToString();
-                             ten = drv["TEN"].ToString();
+                            String maBN = drv["MaBenhNhan"].ToString().Trim();// Trim() de loai bo khoang trang thua
+
+
+                            ho = drv["HO"].ToString();
+                            ten = drv["TEN"].ToString();
 
                             ngaySinh = drv["NgaySinh"].ToString();
 
                             loai = (cbLOAI.Checked == true) ? 1 : 0;
-                           
-                             maBsTiepNhan = string.IsNullOrEmpty(drv["MaBacSiTiepNhan"].ToString()) ? null : drv["MaBacSiTiepNhan"].ToString();
-                             maBsTheoDoi = string.IsNullOrEmpty(drv["MaBacSiTheoDoi"].ToString()) ? null : drv["MaBacSiTheoDoi"].ToString();
+
+                            maBsTiepNhan = string.IsNullOrEmpty(drv["MaBacSiTiepNhan"].ToString()) ? null : drv["MaBacSiTiepNhan"].ToString();
+                            maBsTheoDoi = string.IsNullOrEmpty(drv["MaBacSiTheoDoi"].ToString()) ? null : drv["MaBacSiTheoDoi"].ToString();
                             if (maBsTheoDoi == null && maBsTiepNhan == null)
                             {
-                                queryUndo = string.Format(
-                               "UPDATE DBO.BENHNHAN " +
-                               "SET " +
-                               "HO = N'{0}'," +
-                               "TEN = N'{1}'," +
-                               "NGAYSINH = '{2}'," +
-                               "MaLoai = {3}" + 
-                               " WHERE MaBenhNhan = '" + maBN + "'", ho, ten, Program.convertToSqlDate(ngaySinh), loai);
+                                queryUndo =
+                                "UPDATE DBO.BENHNHAN " +
+                                "SET " +
+                                "HO = N'" + ho + "'," +
+                                "TEN = N'" + ten + "'," +
+                                "NGAYSINH = '" + ngaySinh + "'," +
+                                "MaLoai = " + loai + "," +
+                                 "MaBacSiTheoDoi = '" + maBsTheoDoi + "', " +
+                                 "MaBacSiTiepNhan = '" + maBsTiepNhan + "'" +
+                                "WHERE MaBenhNhan = '" + maBN + "'";
                             }
                             else if (maBsTheoDoi == null)
                             {
@@ -279,9 +281,9 @@ namespace BENHVIEN
                                "SET " +
                                "HO = N'" + ho + "'," +
                                "TEN = N'" + ten + "'," +
-                               "NGAYSINH = '" + Program.convertToSqlDate(ngaySinh) + "'," +
+                               "NGAYSINH = '" + ngaySinh + "'," +
                                "MaLoai = " + loai + "," +
-         
+
                                 "MaBacSiTiepNhan = '" + maBsTiepNhan + "'" +
                                "WHERE MaBenhNhan = '" + maBN + "'";
                             }
@@ -292,10 +294,10 @@ namespace BENHVIEN
                                 "SET " +
                                 "HO = N'" + ho + "'," +
                                 "TEN = N'" + ten + "'," +
-                                "NGAYSINH = '" + Program.convertToSqlDate(ngaySinh) + "'," +
+                                "NGAYSINH = '" + ngaySinh + "'," +
                                 "MaLoai = " + loai + "," +
                                 "MaBacSiTheoDoi = '" + maBsTheoDoi + "'" +
-                                
+
                                 "WHERE MaBenhNhan = '" + maBN + "'";
                             }
                             else
@@ -305,7 +307,7 @@ namespace BENHVIEN
                                 "SET " +
                                 "HO = N'" + ho + "'," +
                                 "TEN = N'" + ten + "'," +
-                                "NGAYSINH = '" + Program.convertToSqlDate(ngaySinh) + "'," +
+                                "NGAYSINH = '" + ngaySinh + "'," +
                                 "MaLoai = " + loai + "," +
                                 "MaBacSiTheoDoi = '" + maBsTheoDoi + "'," +
                                  "MaBacSiTiepNhan = '" + maBsTiepNhan + "'" +
@@ -321,9 +323,9 @@ namespace BENHVIEN
                         }
 
 
-                      
 
-                      
+
+
                         /*cập nhật lại trạng thái thêm mới cho chắc*/
                         dangThemMoi = false;
                         MessageBox.Show("Ghi thành công", "Thông báo", MessageBoxButtons.OK);
@@ -331,7 +333,7 @@ namespace BENHVIEN
                     catch (Exception ex)
                     {
 
-                        bdsBENHNHAN.RemoveCurrent();
+                        /* bdsBENHNHAN.RemoveCurrent();*/
                         MessageBox.Show("Thất bại. Vui lòng kiểm tra lại!\n" + ex.Message, "Lỗi",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -339,7 +341,7 @@ namespace BENHVIEN
                     bdsBENHNHAN.Position = viTriThem;
                 }
             }
-           
+
         }
 
         private void btnLAMMOI_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -364,7 +366,7 @@ namespace BENHVIEN
 
             String ho = txtHO.Text.ToString();
             String ten = txtTEN.Text.ToString();
-        
+
             DateTime ngaySinh = ((DateTime)drv["NgaySinh"]);
 
             int loai = (cbLOAI.Checked == true) ? 1 : 0;
@@ -506,10 +508,10 @@ string.Format("INSERT INTO DBO.BENHNHAN( Ho,Ten,NgaySinh,MaLoai,MaBacSiTheoDoi,M
 
 
                 this.btnLAMMOI.Enabled = true;
-              
+
                 this.btnTHOAT.Enabled = true;
 
-              
+
 
                 /*  bds.CancelEdit();*/
                 /*xoa dong hien tai*/
@@ -517,7 +519,7 @@ string.Format("INSERT INTO DBO.BENHNHAN( Ho,Ten,NgaySinh,MaLoai,MaBacSiTheoDoi,M
                 /* trở về lúc đầu con trỏ đang đứng*/
                 bdsBENHNHAN.Position = viTri;
 
-               
+
                 return;
             }
 
@@ -537,10 +539,10 @@ string.Format("INSERT INTO DBO.BENHNHAN( Ho,Ten,NgaySinh,MaLoai,MaBacSiTheoDoi,M
             int n = Program.ExecSqlNonQuery(cauTruyVanHoanTac);
 
             this.bENHNHANTableAdapter.Fill(this.DS.BENHNHAN);
-            
 
 
-            
+
+
         }
 
         private void btnTHOAT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -561,4 +563,4 @@ string.Format("INSERT INTO DBO.BENHNHAN( Ho,Ten,NgaySinh,MaLoai,MaBacSiTheoDoi,M
 
         }
     }
-    }
+}

@@ -39,8 +39,10 @@ namespace BENHVIEN
             this.nHANVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.nHANVIENTableAdapter.Fill(this.DS.NHANVIEN);
             // TODO: This line of code loads data into the 'DS.YTA' table. You can move, or remove it, as needed.
+            this.yTATableAdapter.Connection.ConnectionString = Program.connstr;
             this.yTATableAdapter.Fill(this.DS.YTA);
             // TODO: This line of code loads data into the 'DS.BACSI' table. You can move, or remove it, as needed.
+            this.bACSITableAdapter.Connection.ConnectionString = Program.connstr;
             this.bACSITableAdapter.Fill(this.DS.BACSI);
 
 

@@ -114,7 +114,7 @@ namespace BENHVIEN
             {
                 FormChonSuChuaTri form = new FormChonSuChuaTri();
                 form.ShowDialog();
-                txtMaSCT.Text = Program.maSCTApDung;  
+                txtMaSCT.Text = Program.maSCTApDung;
             }
             if (txtMaSCT.Text == "")
             {
@@ -149,7 +149,7 @@ namespace BENHVIEN
         }
         private bool kiemTraDuLieuDauVao1()
         {
-            if (txtMaVT.Text == "") 
+            if (txtMaVT.Text == "")
             {
                 MessageBox.Show("Không bỏ trống mã vật tư", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -214,26 +214,26 @@ namespace BENHVIEN
 
                             string query =
                                 string.Format("EXEC SP_ThemCTBSCTBN '{0}', '{1}', '{2}', '{3}', {4}, N'{5}'", Program.userName,
-                                Program.maBNCanChua, txtMaSCT.Text, Program.convertToSqlDate(ngayChuaTriDateEdit.Text), thoiGianChuaTriSpinEdit.Text, txtKQ.Text);
+                                Program.maBNCanChua, txtMaSCT.Text, ngayChuaTriDateEdit.Text, thoiGianChuaTriSpinEdit.Text, txtKQ.Text);
                             if (thoiGianChuaTriSpinEdit.Text == "" && txtKQ.Text == "")
                             {
                                 query =
                                     string.Format("EXEC SP_ThemCTBSCTBN '{0}', '{1}', '{2}', '{3}', NULL, NULL", Program.userName,
-                                    Program.maBNCanChua, txtMaSCT.Text, Program.convertToSqlDate(ngayChuaTriDateEdit.Text));
+                                    Program.maBNCanChua, txtMaSCT.Text, ngayChuaTriDateEdit.Text);
 
                             }
                             else if (thoiGianChuaTriSpinEdit.Text == "")
                             {
                                 query =
                                 string.Format("EXEC SP_ThemCTBSCTBN '{0}', '{1}', '{2}', '{3}', NULL, N'{4}'", Program.userName,
-                                Program.maBNCanChua, txtMaSCT.Text, Program.convertToSqlDate(ngayChuaTriDateEdit.Text), txtKQ.Text);
+                                Program.maBNCanChua, txtMaSCT.Text, ngayChuaTriDateEdit.Text, txtKQ.Text);
 
                             }
                             else if (txtKQ.Text == "")
                             {
                                 query =
                                 string.Format("EXEC SP_ThemCTBSCTBN '{0}', '{1}', '{2}', '{3}', {4}, NULL", Program.userName,
-                                Program.maBNCanChua, txtMaSCT.Text, Program.convertToSqlDate(ngayChuaTriDateEdit.Text), thoiGianChuaTriSpinEdit.Text);
+                                Program.maBNCanChua, txtMaSCT.Text, ngayChuaTriDateEdit.Text, thoiGianChuaTriSpinEdit.Text);
 
                             }
                             int n = Program.ExecSqlNonQuery(query);
@@ -249,25 +249,25 @@ namespace BENHVIEN
                             {
                                 queryUndo = string.Format("UPDATE DBO.CT_BACSI_CHUATRI_BENHNHAN " +
                                 "SET MaSuChuaTri = '{0}', NgayChuaTri = '{1}', ThoiGianChuaTri = NULL, KetQua = N'{2}' WHERE MaCTBSCTBN = '{3}'",
-                                MaSCTCu, Program.convertToSqlDate(NgayChuaTriCu), KetQuaCu, MaCTBSCTBNCu);
+                                MaSCTCu, NgayChuaTriCu, KetQuaCu, MaCTBSCTBNCu);
                             }
                             else
                             {
                                 queryUndo = string.Format("UPDATE DBO.CT_BACSI_CHUATRI_BENHNHAN " +
                                 "SET MaSuChuaTri = '{0}', NgayChuaTri = '{1}', ThoiGianChuaTri = {2}, KetQua = N'{3}' WHERE MaCTBSCTBN = '{4}'",
-                                MaSCTCu, Program.convertToSqlDate(NgayChuaTriCu), Program.formatSpinEdit(ThoiGianChuaTriCu), KetQuaCu, MaCTBSCTBNCu);
+                                MaSCTCu, NgayChuaTriCu, Program.formatSpinEdit(ThoiGianChuaTriCu), KetQuaCu, MaCTBSCTBNCu);
                             }
                             if (thoiGianChuaTriSpinEdit.Text == "")
                             {
                                 query = string.Format("UPDATE DBO.CT_BACSI_CHUATRI_BENHNHAN " +
                                "SET MaSuChuaTri = '{0}', NgayChuaTri = '{1}', ThoiGianChuaTri = NULL, KetQua = N'{2}' WHERE MaCTBSCTBN = '{3}'",
-                               txtMaSCT.Text, Program.convertToSqlDate(ngayChuaTriDateEdit.Text), txtKQ.Text, maCTBSCTBNSpinEdit.Text);
+                               txtMaSCT.Text, NgayChuaTriCu, txtKQ.Text, maCTBSCTBNSpinEdit.Text);
                             }
                             else
                             {
                                 query = string.Format("UPDATE DBO.CT_BACSI_CHUATRI_BENHNHAN " +
                                "SET MaSuChuaTri = '{0}', NgayChuaTri = '{1}', ThoiGianChuaTri = {2}, KetQua = N'{3}' WHERE MaCTBSCTBN = '{4}'",
-                               txtMaSCT.Text, Program.convertToSqlDate(ngayChuaTriDateEdit.Text), Program.formatSpinEdit(thoiGianChuaTriSpinEdit.Text), txtKQ.Text, maCTBSCTBNSpinEdit.Text);
+                               txtMaSCT.Text, NgayChuaTriCu, Program.formatSpinEdit(thoiGianChuaTriSpinEdit.Text), txtKQ.Text, maCTBSCTBNSpinEdit.Text);
                             }
 
                             int n = Program.ExecSqlNonQuery(query);
@@ -320,7 +320,7 @@ namespace BENHVIEN
                 SP_ChuaTriBenhNhanBDS.RemoveCurrent();
                 /* trở về lúc đầu con trỏ đang đứng*/
                 SP_ChuaTriBenhNhanBDS.Position = viTri;
-                
+
 
                 return;
             }
@@ -382,14 +382,14 @@ namespace BENHVIEN
                 queryUndo =
                     string.Format("INSERT INTO DBO.CT_BACSI_CHUATRI_BENHNHAN(MaBacSi, MaBenhNhan, MaSuChuaTri, NgayChuaTri, ThoiGianChuaTri, KetQua) " +
                     "VALUES('{0}', '{1}', '{2}', '{3}', NULL, N'{4}')",
-                 Program.userName, Program.maBNCanChua, MaSCTCu, Program.convertToSqlDate(NgayChuaTriCu), KetQuaCu);
+                 Program.userName, Program.maBNCanChua, MaSCTCu, NgayChuaTriCu, KetQuaCu);
             }
             else
             {
                 queryUndo =
                     string.Format("INSERT INTO DBO.CT_BACSI_CHUATRI_BENHNHAN(MaBacSi, MaBenhNhan, MaSuChuaTri, NgayChuaTri, ThoiGianChuaTri, KetQua) " +
                     "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', N'{5}')",
-                     Program.userName, Program.maBNCanChua, MaSCTCu, Program.convertToSqlDate(NgayChuaTriCu), Program.formatSpinEdit(ThoiGianChuaTriCu), KetQuaCu);
+                     Program.userName, Program.maBNCanChua, MaSCTCu, NgayChuaTriCu, Program.formatSpinEdit(ThoiGianChuaTriCu), KetQuaCu);
             }
             undoList.Push(queryUndo);
             String query = string.Format("DELETE FROM CT_BACSI_CHUATRI_BENHNHAN WHERE MaCTBSCTBN = {0}", MaCTBSCTBNCu);
@@ -426,8 +426,8 @@ namespace BENHVIEN
             {
                 btnXOA.Enabled = false;
             }
-        
-    }
+
+        }
 
         private void btnThemVatTu_Click(object sender, EventArgs e)
         {
@@ -439,7 +439,7 @@ namespace BENHVIEN
             btnGhiVT.Visible = true;
             btnLAMMOI.Enabled = false;
             btnTHEM.Enabled = false;
-            btnXOA.Enabled=false;
+            btnXOA.Enabled = false;
             btnLUU.Enabled = false;
             btnUNDO.Enabled = false;
             dangThemMoiCTHD = true;
@@ -450,7 +450,7 @@ namespace BENHVIEN
 
         private void txtMaBS_EditValueChanged(object sender, EventArgs e)
         {
-            if(txtMaBS.Text == Program.userName)
+            if (txtMaBS.Text == Program.userName)
             {
                 ngayChuaTriDateEdit.ReadOnly = false;
                 thoiGianChuaTriSpinEdit.ReadOnly = false;
@@ -461,7 +461,7 @@ namespace BENHVIEN
         private void maVTTextEdit_Click(object sender, EventArgs e)
         {
             Form f = Program.formMain.CheckExists(typeof(FormChonVatTu));
-            if(f != null)
+            if (f != null)
             {
                 f.Activate();
             }
@@ -508,8 +508,8 @@ namespace BENHVIEN
             //ma benh nhan la ma benh nhan can chua tri
             String MaSCTCu = drv1["MaSuChuaTri"].ToString();
             String NgayChuaTriCu = drv1["NgayChuaTri"].ToString();
-           
-            
+
+
 
             DataRowView drv = ((DataRowView)CT_HoaDonBDS[CT_HoaDonBDS.Position]);
             String MaVTCu = drv["MaVT"].ToString();
@@ -526,8 +526,8 @@ namespace BENHVIEN
                 {
                     try
                     {
-                        
-                        
+
+
 
 
                         //this.CT_HoaDonBDS.EndEdit();
@@ -543,13 +543,13 @@ namespace BENHVIEN
                             string query =
                                 string.Format("INSERT INTO DBO.CT_HOADON(MaVT, MaCTBSCTBN, SoLuong, DonGia, ThoiGian) " +
                                 "VALUES('{0}', {1}, {2}, {3}, '{4}')",
-                                txtMaVT.Text, maCTBSCTBNSpinEdit.Text, Program.formatSpinEdit(soLuongSpinEdit.Text), donGiaSpinEdit.Text, Program.convertToSqlDate(thoiGianDateEdit.Text));
-                            
+                                txtMaVT.Text, maCTBSCTBNSpinEdit.Text, Program.formatSpinEdit(soLuongSpinEdit.Text), donGiaSpinEdit.Text, thoiGianDateEdit.Text);
+
                             int n = Program.ExecSqlNonQuery(query);
                             Console.WriteLine(n);
                             queryUndo = string.Format("DELETE FROM DBO.CT_HOADON WHERE MaCTBSCTBN = (SELECT MaCTBSCTBN FROM CT_BACSI_CHUATRI_BENHNHAN WHERE MaBenhNhan = '{0}' AND MaBacSi = '{1}' AND MaSuChuaTri = '{2}' AND NgayChuaTri = '{3}')" +
-                                " AND MaVT = '{4}'", Program.maBNCanChua, Program.userName, MaSCTCu, Program.convertToSqlDate(NgayChuaTriCu), txtMaVT.Text);
-                            if(n == 0)
+                                " AND MaVT = '{4}'", Program.maBNCanChua, Program.userName, MaSCTCu, NgayChuaTriCu, txtMaVT.Text);
+                            if (n == 0)
                             {
                                 this.CT_HoaDonBDS.EndEdit();
 
@@ -576,14 +576,14 @@ namespace BENHVIEN
                         {
                             string query = string.Format("UPDATE DBO.CT_HOADON " +
                                 "SET ThoiGian = '{0}', SoLuong = {1} WHERE MaCTBSCTBN = {2} AND MaVT = '{3}'",
-                                Program.convertToSqlDate(thoiGianDateEdit.Text), Program.formatSpinEdit(soLuongSpinEdit.Text), Program.formatSpinEdit(maCTBSCTBNSpinEdit1.Text), txtMaVT.Text);
+                               thoiGianDateEdit.Text, Program.formatSpinEdit(soLuongSpinEdit.Text), Program.formatSpinEdit(maCTBSCTBNSpinEdit1.Text), txtMaVT.Text);
                             queryUndo = string.Format("UPDATE DBO.CT_HOADON " +
                                 "SET ThoiGian = '{0}', SoLuong = {1} WHERE MaCTBSCTBN = (SELECT MaCTBSCTBN FROM CT_BACSI_CHUATRI_BENHNHAN WHERE MaBacSi = '{2}' AND " +
                                 "MaBenhNhan = '{3}' AND MaSuChuaTri = '{4}' AND NgayChuaTri = '{5}') AND MaVT = '{6}'",
-                                Program.convertToSqlDate(ThoiGianCu), Program.formatSpinEdit(SoLuongCu), Program.userName, Program.maBNCanChua, MaSCTCu, Program.convertToSqlDate(NgayChuaTriCu), txtMaVT.Text);
-                            
-                            
-                            
+                                ThoiGianCu, Program.formatSpinEdit(SoLuongCu), Program.userName, Program.maBNCanChua, MaSCTCu, NgayChuaTriCu, txtMaVT.Text);
+
+
+
 
                             int n = Program.ExecSqlNonQuery(query);
                             if (n == 0)
@@ -608,7 +608,7 @@ namespace BENHVIEN
                             }
                         }
 
-                        
+
 
                     }
                     catch (Exception ex)
@@ -622,7 +622,7 @@ namespace BENHVIEN
                     CT_HoaDonBDS.Position = viTriThem1;
                 }
             }
-            
+
         }
 
         private void btnHieuChinhVatTu_Click(object sender, EventArgs e)
@@ -648,7 +648,7 @@ namespace BENHVIEN
             string queryUndo = string.Format("INSERT INTO DBO.CT_HOADON VALUES('{0}', (SELECT MaCTBSCTBN FROM CT_BACSI_CHUATRI_BENHNHAN WHERE MaBacSi = '{1}' " +
                 "AND MaBenhNhan = '{2}' AND MaSuChuaTri = '{3}' AND NgayChuaTri = '{4}'), " +
                 "{5}, {6}, '{7}')",
-                txtMaVT.Text, Program.userName, Program.maBNCanChua, txtMaSCT.Text, Program.convertToSqlDate(ngayChuaTriDateEdit.Text), Program.formatSpinEdit(soLuongSpinEdit.Text), Program.formatSpinEdit(donGiaSpinEdit.Text), Program.convertToSqlDate(thoiGianDateEdit.Text));
+                txtMaVT.Text, Program.userName, Program.maBNCanChua, txtMaSCT.Text, ngayChuaTriDateEdit.Text, Program.formatSpinEdit(soLuongSpinEdit.Text), thoiGianDateEdit.Text);
             CT_HoaDonBDS.RemoveCurrent();
 
             CT_HoaDonTableAdapter.Update(DS.CT_HOADON);

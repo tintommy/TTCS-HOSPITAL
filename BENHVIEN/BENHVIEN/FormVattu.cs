@@ -39,7 +39,7 @@ namespace BENHVIEN
 
             this.vATTUTableAdapter.Connection.ConnectionString = Program.connstr;
             this.vATTUTableAdapter.Fill(this.DS.VATTU);
-     
+            this.cT_HOADONTableAdapter.Connection.ConnectionString = Program.connstr;
             this.cT_HOADONTableAdapter.Fill(this.DS.CT_HOADON);
         }
 
