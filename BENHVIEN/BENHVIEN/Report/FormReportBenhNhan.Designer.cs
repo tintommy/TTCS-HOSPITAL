@@ -54,15 +54,23 @@
             this.kHUCHUATRIBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kHUCHUATRITableAdapter = new BENHVIEN.HOSPITALDataSetTableAdapters.KHUCHUATRITableAdapter();
             this.tableAdapterManager = new BENHVIEN.HOSPITALDataSetTableAdapters.TableAdapterManager();
+            this.txtPATH = new DevExpress.XtraEditors.TextEdit();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.txtPATH2 = new DevExpress.XtraEditors.TextEdit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKHU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHUCHUATRIBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPATH.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPATH2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.txtPATH);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.cmbNAMTK);
@@ -74,7 +82,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1757, 334);
+            this.panel1.Size = new System.Drawing.Size(1757, 386);
             this.panel1.TabIndex = 0;
             // 
             // button2
@@ -166,7 +174,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.txtPATH2);
             this.panel2.Controls.Add(this.txtKHU);
             this.panel2.Controls.Add(this.checkKHU);
             this.panel2.Controls.Add(this.button3);
@@ -178,9 +188,9 @@
             this.panel2.Controls.Add(this.rdNOITHEONAM);
             this.panel2.Controls.Add(this.cmbTHANGNOI);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 334);
+            this.panel2.Location = new System.Drawing.Point(0, 386);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1757, 475);
+            this.panel2.Size = new System.Drawing.Size(1757, 423);
             this.panel2.TabIndex = 2;
             // 
             // button5
@@ -331,6 +341,44 @@
             this.tableAdapterManager.VATTUTableAdapter = null;
             this.tableAdapterManager.YTATableAdapter = null;
             // 
+            // txtPATH
+            // 
+            this.txtPATH.Location = new System.Drawing.Point(730, 321);
+            this.txtPATH.Name = "txtPATH";
+            this.txtPATH.Size = new System.Drawing.Size(373, 22);
+            this.txtPATH.TabIndex = 8;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(1141, 315);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(149, 34);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "chọn thư mục";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(1141, 354);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(149, 34);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "chọn thư mục";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // txtPATH2
+            // 
+            this.txtPATH2.Location = new System.Drawing.Point(730, 360);
+            this.txtPATH2.Name = "txtPATH2";
+            this.txtPATH2.Size = new System.Drawing.Size(373, 22);
+            this.txtPATH2.TabIndex = 10;
+            // 
             // FormReportBenhNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -349,6 +397,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtKHU.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHUCHUATRIBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPATH.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPATH2.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -380,5 +430,9 @@
         private HOSPITALDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Button button5;
         private DevExpress.XtraEditors.TextEdit txtKHU;
+        private System.Windows.Forms.Button button6;
+        private DevExpress.XtraEditors.TextEdit txtPATH;
+        private System.Windows.Forms.Button button7;
+        private DevExpress.XtraEditors.TextEdit txtPATH2;
     }
 }

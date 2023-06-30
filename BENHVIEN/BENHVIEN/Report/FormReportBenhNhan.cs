@@ -128,31 +128,37 @@ namespace BENHVIEN.Report
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (txtPATH.Text == "") {
+                DialogResult dr = MessageBox.Show("Hãy chọn nơi lưu file",
+                               "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (rdNGOAITHEOTHANG.Checked == true)
             {
-
+                String fileName = txtPATH.Text.ToString() + "\\ReportBNNgoaiTruTheoThang.pdf";
                 try
                 {
                     ReportBNNgoaiTruTheoThang report = new ReportBNNgoaiTruTheoThang(0, thangNgoai, namThangNgoai);
 
                     report.thang.Text = thangNgoai.ToString();
                     report.nam.Text = namThangNgoai.ToString();
-                    if (File.Exists(@"D:\ReportBNNgoaiTruTheoThang.pdf"))
+                    if (File.Exists(fileName))
                     {
-                        DialogResult dr = MessageBox.Show("File ReportBNNgoaiTruTheoThang.pdf tại ổ D đã có!\nBạn có muốn tạo lại?",
+                        DialogResult dr = MessageBox.Show("File ReportBNNgoaiTruTheoThang.pdf đã có!\nBạn có muốn tạo lại?",
                             "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (dr == DialogResult.Yes)
                         {
-                            report.ExportToPdf(@"D:\ReportBNNgoaiTruTheoThang.pdf");
-                            MessageBox.Show("File ReportBNNgoaiTruTheoThang.pdf đã được ghi thành công tại ổ D",
+                            report.ExportToPdf(fileName);
+                            MessageBox.Show("File ReportBNNgoaiTruTheoThang.pdf đã được ghi thành công tại"+ txtPATH.Text.ToString(),
                     "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
 
                     }
                     else
                     {
-                        report.ExportToPdf(@"D:\ReportBNNgoaiTruTheoThang.pdf");
-                        MessageBox.Show("File ReportBNNgoaiTruTheoThang.pdf đã được ghi thành công tại ổ D",
+                        report.ExportToPdf(fileName);
+                        MessageBox.Show("File ReportBNNgoaiTruTheoThang.pdf đã được ghi thành công tại " + txtPATH.Text.ToString(),
                     "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
@@ -167,26 +173,27 @@ namespace BENHVIEN.Report
             }
             else
             {
+                String fileName = txtPATH.Text.ToString() + "\\ReportBNNgoaiTruTheoNam.pdf";
                 try
                 {
                     ReportBNNgoaiTruTheoNam report = new ReportBNNgoaiTruTheoNam(0, namNgoai);
                     report.nam.Text = namNgoai.ToString();
-                    if (File.Exists(@"D:\ReportBNNgoaiTruTheoNam.pdf"))
+                    if (File.Exists(fileName))
                     {
-                        DialogResult dr = MessageBox.Show("File ReportBNNgoaiTruTheoNam.pdf tại ổ D đã có!\nBạn có muốn tạo lại?",
+                        DialogResult dr = MessageBox.Show("File ReportBNNgoaiTruTheoNam.pdf đã có!\nBạn có muốn tạo lại?",
                             "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (dr == DialogResult.Yes)
                         {
-                            report.ExportToPdf(@"D:\ReportBNNgoaiTruTheoNam.pdf");
-                            MessageBox.Show("File ReportBNNgoaiTruTheoNam.pdf đã được ghi thành công tại ổ D",
+                            report.ExportToPdf(fileName);
+                            MessageBox.Show("File ReportBNNgoaiTruTheoNam.pdf đã được ghi thành công tại" + txtPATH.Text.ToString(),
                     "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
 
                     }
                     else
                     {
-                        report.ExportToPdf(@"D:\ReportBNNgoaiTruTheoNam.pdf");
-                        MessageBox.Show("File ReportBNNgoaiTruTheoNam.pdf đã được ghi thành công tại ổ D",
+                        report.ExportToPdf(fileName);
+                        MessageBox.Show("File ReportBNNgoaiTruTheoNam.pdf đã được ghi thành công tại "+txtPATH.Text.ToString(),
                     "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
@@ -211,6 +218,7 @@ namespace BENHVIEN.Report
         {
             if (!checkKHU.Checked)
             {
+               
                 if (rdNOITHEOTHANG.Checked == true)
                 {
 
@@ -267,12 +275,19 @@ namespace BENHVIEN.Report
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (!checkKHU.Checked)
+            if (txtPATH2.Text == "")
+            {
+                DialogResult dr = MessageBox.Show("Hãy chọn nơi lưu file",
+                               "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+                if (!checkKHU.Checked)
             {
                 if (rdNOITHEOTHANG.Checked == true)
                 {
 
-
+                    String fileName = txtPATH2.Text.ToString() + "\\ReportBNNoiTruTheoThang.pdf";
 
                     try
                     {
@@ -280,22 +295,22 @@ namespace BENHVIEN.Report
 
                         report.thang.Text = thangNoi.ToString();
                         report.nam.Text = namThangNoi.ToString();
-                        if (File.Exists(@"D:\ReportBNNoiTruTheoThang.pdf"))
+                        if (File.Exists(fileName))
                         {
-                            DialogResult dr = MessageBox.Show("File ReportBNNoiTruTheoThang.pdf tại ổ D đã có!\nBạn có muốn tạo lại?",
+                            DialogResult dr = MessageBox.Show("File ReportBNNoiTruTheoThang.pdf đã có!\nBạn có muốn tạo lại?",
                                 "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                             if (dr == DialogResult.Yes)
                             {
-                                report.ExportToPdf(@"D:\ReportBNNoiTruTheoThang.pdf");
-                                MessageBox.Show("File ReportBNNoiTruTheoThang.pdf đã được ghi thành công tại ổ D",
+                                report.ExportToPdf(fileName);
+                                MessageBox.Show("File ReportBNNoiTruTheoThang.pdf đã được ghi thành công tại "+txtPATH2.Text.ToString(),
                         "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
 
                         }
                         else
                         {
-                            report.ExportToPdf(@"D:\ReportBNNoiTruTheoThang.pdf");
-                            MessageBox.Show("File ReportBNNoiTruTheoThang.pdf đã được ghi thành công tại ổ D",
+                            report.ExportToPdf(fileName);
+                            MessageBox.Show("File ReportBNNoiTruTheoThang.pdf đã được ghi thành công tại "+ txtPATH2.Text.ToString(),
                         "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
@@ -311,26 +326,27 @@ namespace BENHVIEN.Report
                 }
                 else
                 {
+                    String fileName = txtPATH.Text.ToString() + "\\ReportBNNoiTruTheoNam.pdf";
                     try
                     {
                         ReportBNNoiTruTheoNam report = new ReportBNNoiTruTheoNam(1, namNoi);
                         report.nam.Text = namNoi.ToString();
-                        if (File.Exists(@"D:\ReportBNNoiTruTheoNam.pdf"))
+                        if (File.Exists(fileName))
                         {
-                            DialogResult dr = MessageBox.Show("File ReportBNNoiTruTheoNam.pdf tại ổ D đã có!\nBạn có muốn tạo lại?",
+                            DialogResult dr = MessageBox.Show("File ReportBNNoiTruTheoNam.pdf đã có!\nBạn có muốn tạo lại?",
                                 "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                             if (dr == DialogResult.Yes)
                             {
-                                report.ExportToPdf(@"D:\ReportBNNoiTruTheoNam.pdf");
-                                MessageBox.Show("File ReportBNNoiTruTheoNam.pdf đã được ghi thành công tại ổ D",
+                                report.ExportToPdf(fileName);
+                                MessageBox.Show("File ReportBNNoiTruTheoNam.pdf đã được ghi thành công tại "+ txtPATH2.Text.ToString(),
                         "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
 
                         }
                         else
                         {
-                            report.ExportToPdf(@"D:\ReportBNNoiTruTheoNam.pdf");
-                            MessageBox.Show("File ReportBNNoiTruTheoNam.pdf đã được ghi thành công tại ổ D",
+                            report.ExportToPdf(fileName);
+                            MessageBox.Show("File ReportBNNoiTruTheoNam.pdf đã được ghi thành công tại " + txtPATH2.Text.ToString(),
                         "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
@@ -353,7 +369,7 @@ namespace BENHVIEN.Report
                 if (rdNOITHEOTHANG.Checked == true)
                 {
 
-                   
+                    String fileName = txtPATH.Text.ToString() + "\\ReportBNNgoaiTruTheoThangTheoKhu.pdf";
                     try
                     {
                         ReportBNNoiTruTheoThangTheoKhu report = new ReportBNNoiTruTheoThangTheoKhu(thangNoi, namThangNoi, soKhu);
@@ -361,22 +377,22 @@ namespace BENHVIEN.Report
                         report.thang.Text = thangNoi.ToString();
                         report.nam.Text = namThangNoi.ToString();
                         report.khu.Text = Program.tenKhu.ToString();
-                        if (File.Exists(@"D:\ReportBNNoiTruTheoThangTheoKhu.pdf"))
+                        if (File.Exists(fileName))
                         {
-                            DialogResult dr = MessageBox.Show("File ReportBNNoiTruTheoThangTheoKhu.pdf tại ổ D đã có!\nBạn có muốn tạo lại?",
+                            DialogResult dr = MessageBox.Show("File ReportBNNoiTruTheoThangTheoKhu.pdf đã có!\nBạn có muốn tạo lại?",
                                 "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                             if (dr == DialogResult.Yes)
                             {
-                                report.ExportToPdf(@"D:\ReportBNNoiTruTheoThangTheoKhu.pdf");
-                                MessageBox.Show("File ReportBNNoiTruTheoThangTheoKhu.pdf đã được ghi thành công tại ổ D",
+                                report.ExportToPdf(fileName);
+                                MessageBox.Show("File ReportBNNoiTruTheoThangTheoKhu.pdf đã được ghi thành công tại " + txtPATH2.Text.ToString(),
                         "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
 
                         }
                         else
                         {
-                            report.ExportToPdf(@"D:\ReportBNNoiTruTheoThangTheoKhu.pdf");
-                            MessageBox.Show("File ReportBNNoiTruTheoThangTheoKhu.pdf đã được ghi thành công tại ổ D",
+                            report.ExportToPdf(fileName);
+                            MessageBox.Show("File ReportBNNoiTruTheoThangTheoKhu.pdf đã được ghi thành công tại " + txtPATH2.Text.ToString(),
                         "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
@@ -391,29 +407,29 @@ namespace BENHVIEN.Report
                 }
                 else
                 {
-                  
+                    String fileName = txtPATH.Text.ToString() + "\\ReportBNNgoaiTruTheoNamTheoKhu.pdf";
                     try
                     {
                         ReportBNNoiTruTheoNamTheoKhu report = new ReportBNNoiTruTheoNamTheoKhu(namNoi, soKhu);
 
                         report.khu.Text = Program.tenKhu.ToString();
                         report.nam.Text = namNoi.ToString();
-                        if (File.Exists(@"D:\ReportBNNoiTruTheoNamTheoKhu.pdf"))
+                        if (File.Exists(fileName))
                         {
-                            DialogResult dr = MessageBox.Show("File ReportBNNoiTruTheoNamTheoKhu.pdf tại ổ D đã có!\nBạn có muốn tạo lại?",
+                            DialogResult dr = MessageBox.Show("File ReportBNNoiTruTheoNamTheoKhu.pdf đã có!\nBạn có muốn tạo lại?",
                                 "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                             if (dr == DialogResult.Yes)
                             {
-                                report.ExportToPdf(@"D:\ReportBNNoiTruTheoNamTheoKhu.pdf");
-                                MessageBox.Show("File ReportBNNoiTruTheoNamTheoKhu.pdf đã được ghi thành công tại ổ D",
+                                report.ExportToPdf(fileName);
+                                MessageBox.Show("File ReportBNNoiTruTheoNamTheoKhu.pdf đã được ghi thành công tại " +txtPATH2.Text.ToString(),
                         "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
 
                         }
                         else
                         {
-                            report.ExportToPdf(@"D:\ReportBNNoiTruTheoNamTheoKhu.pdf");
-                            MessageBox.Show("File ReportBNNoiTruTheoNamTheoKhu.pdf đã được ghi thành công tại ổ D",
+                            report.ExportToPdf(fileName);
+                            MessageBox.Show("File ReportBNNoiTruTheoNamTheoKhu.pdf đã được ghi thành công tại " + txtPATH2.Text.ToString(),
                         "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
@@ -434,6 +450,40 @@ namespace BENHVIEN.Report
             f.ShowDialog();
             txtKHU.Text = Program.tenKhu;
             soKhu = Program.maKhu;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string path = "nhấn save để chọn";
+
+            SaveFileDialog sf = new SaveFileDialog();
+
+            sf.FileName = path;
+
+            if (sf.ShowDialog() == DialogResult.OK)
+            {
+
+                string savePath = Path.GetDirectoryName(sf.FileName);
+                txtPATH.Text = savePath.ToString();
+
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string path = "nhấn save để chọn";
+
+            SaveFileDialog sf = new SaveFileDialog();
+
+            sf.FileName = path;
+
+            if (sf.ShowDialog() == DialogResult.OK)
+            {
+
+                string savePath = Path.GetDirectoryName(sf.FileName);
+                txtPATH2.Text = savePath.ToString();
+
+            }
         }
     }
 }
