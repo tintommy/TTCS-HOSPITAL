@@ -57,11 +57,13 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnCHUYENCHINHANH = new DevExpress.XtraBars.BarButtonItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ngayChuaTriDateEdit = new DevExpress.XtraEditors.DateEdit();
+            this.cT_BACSI_CHUATRI_BENHNHANBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DS = new BENHVIEN.HOSPITALDataSet();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.SP_ChuaTriBenhNhanBDS = new System.Windows.Forms.BindingSource(this.components);
-            this.DS = new BENHVIEN.HOSPITALDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaCTBSCTBN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaBacSi = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -75,7 +77,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtKQ = new DevExpress.XtraEditors.TextEdit();
             this.thoiGianChuaTriSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.ngayChuaTriDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.txtMaSCT = new DevExpress.XtraEditors.TextEdit();
             this.txtMaBN = new DevExpress.XtraEditors.TextEdit();
             this.txtMaBS = new DevExpress.XtraEditors.TextEdit();
@@ -109,6 +110,7 @@
             this.btnThemVatTu = new System.Windows.Forms.ToolStripMenuItem();
             this.btnXoaVatTu = new System.Windows.Forms.ToolStripMenuItem();
             this.btnHieuChinhVatTu = new System.Windows.Forms.ToolStripMenuItem();
+            this.cT_BACSI_CHUATRI_BENHNHANTableAdapter = new BENHVIEN.HOSPITALDataSetTableAdapters.CT_BACSI_CHUATRI_BENHNHANTableAdapter();
             maCTBSCTBNLabel = new System.Windows.Forms.Label();
             maBacSiLabel = new System.Windows.Forms.Label();
             maBenhNhanLabel = new System.Windows.Forms.Label();
@@ -123,18 +125,19 @@
             thoiGianLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ngayChuaTriDateEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ngayChuaTriDateEdit.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cT_BACSI_CHUATRI_BENHNHANBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SP_ChuaTriBenhNhanBDS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKQ.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thoiGianChuaTriSpinEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ngayChuaTriDateEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ngayChuaTriDateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaSCT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaBN.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaBS.Properties)).BeginInit();
@@ -407,6 +410,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.ngayChuaTriDateEdit);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(ketQuaLabel);
@@ -414,7 +418,6 @@
             this.panel1.Controls.Add(thoiGianChuaTriLabel);
             this.panel1.Controls.Add(this.thoiGianChuaTriSpinEdit);
             this.panel1.Controls.Add(ngayChuaTriLabel);
-            this.panel1.Controls.Add(this.ngayChuaTriDateEdit);
             this.panel1.Controls.Add(maSuChuaTriLabel);
             this.panel1.Controls.Add(this.txtMaSCT);
             this.panel1.Controls.Add(maBenhNhanLabel);
@@ -429,6 +432,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1924, 312);
             this.panel1.TabIndex = 4;
+            // 
+            // ngayChuaTriDateEdit
+            // 
+            this.ngayChuaTriDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cT_BACSI_CHUATRI_BENHNHANBindingSource, "NgayChuaTri", true));
+            this.ngayChuaTriDateEdit.EditValue = null;
+            this.ngayChuaTriDateEdit.Location = new System.Drawing.Point(1419, 202);
+            this.ngayChuaTriDateEdit.MenuManager = this.barManager1;
+            this.ngayChuaTriDateEdit.Name = "ngayChuaTriDateEdit";
+            this.ngayChuaTriDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ngayChuaTriDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ngayChuaTriDateEdit.Size = new System.Drawing.Size(125, 22);
+            this.ngayChuaTriDateEdit.TabIndex = 18;
+            // 
+            // cT_BACSI_CHUATRI_BENHNHANBindingSource
+            // 
+            this.cT_BACSI_CHUATRI_BENHNHANBindingSource.DataMember = "CT_BACSI_CHUATRI_BENHNHAN";
+            this.cT_BACSI_CHUATRI_BENHNHANBindingSource.DataSource = this.DS;
+            // 
+            // DS
+            // 
+            this.DS.DataSetName = "HOSPITALDataSet";
+            this.DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel3
             // 
@@ -466,11 +493,6 @@
             // 
             this.SP_ChuaTriBenhNhanBDS.DataMember = "SP_ChuaTriBenhNhan";
             this.SP_ChuaTriBenhNhanBDS.DataSource = this.DS;
-            // 
-            // DS
-            // 
-            this.DS.DataSetName = "HOSPITALDataSet";
-            this.DS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -610,20 +632,6 @@
             this.thoiGianChuaTriSpinEdit.Size = new System.Drawing.Size(125, 24);
             this.thoiGianChuaTriSpinEdit.TabIndex = 13;
             // 
-            // ngayChuaTriDateEdit
-            // 
-            this.ngayChuaTriDateEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.SP_ChuaTriBenhNhanBDS, "NgayChuaTri", true));
-            this.ngayChuaTriDateEdit.EditValue = null;
-            this.ngayChuaTriDateEdit.Location = new System.Drawing.Point(1419, 201);
-            this.ngayChuaTriDateEdit.MenuManager = this.barManager1;
-            this.ngayChuaTriDateEdit.Name = "ngayChuaTriDateEdit";
-            this.ngayChuaTriDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ngayChuaTriDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ngayChuaTriDateEdit.Size = new System.Drawing.Size(125, 22);
-            this.ngayChuaTriDateEdit.TabIndex = 11;
-            // 
             // txtMaSCT
             // 
             this.txtMaSCT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.SP_ChuaTriBenhNhanBDS, "MaSuChuaTri", true));
@@ -715,7 +723,7 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(228, 290);
+            this.btnHuy.Location = new System.Drawing.Point(471, 312);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(128, 40);
             this.btnHuy.TabIndex = 13;
@@ -726,7 +734,7 @@
             // 
             // btnGhiVT
             // 
-            this.btnGhiVT.Location = new System.Drawing.Point(474, 290);
+            this.btnGhiVT.Location = new System.Drawing.Point(133, 312);
             this.btnGhiVT.Name = "btnGhiVT";
             this.btnGhiVT.Size = new System.Drawing.Size(128, 40);
             this.btnGhiVT.TabIndex = 12;
@@ -959,28 +967,32 @@
             this.btnXoaVatTu,
             this.btnHieuChinhVatTu});
             this.contextMenuStrip.Name = "contextMenuStrip1";
-            this.contextMenuStrip.Size = new System.Drawing.Size(211, 104);
+            this.contextMenuStrip.Size = new System.Drawing.Size(158, 76);
             // 
             // btnThemVatTu
             // 
             this.btnThemVatTu.Name = "btnThemVatTu";
-            this.btnThemVatTu.Size = new System.Drawing.Size(210, 24);
+            this.btnThemVatTu.Size = new System.Drawing.Size(157, 24);
             this.btnThemVatTu.Text = "Thêm vật tư";
             this.btnThemVatTu.Click += new System.EventHandler(this.btnThemVatTu_Click);
             // 
             // btnXoaVatTu
             // 
             this.btnXoaVatTu.Name = "btnXoaVatTu";
-            this.btnXoaVatTu.Size = new System.Drawing.Size(210, 24);
+            this.btnXoaVatTu.Size = new System.Drawing.Size(157, 24);
             this.btnXoaVatTu.Text = "Xóa vật tư";
             this.btnXoaVatTu.Click += new System.EventHandler(this.btnXoaVatTu_Click);
             // 
             // btnHieuChinhVatTu
             // 
             this.btnHieuChinhVatTu.Name = "btnHieuChinhVatTu";
-            this.btnHieuChinhVatTu.Size = new System.Drawing.Size(210, 24);
+            this.btnHieuChinhVatTu.Size = new System.Drawing.Size(157, 24);
             this.btnHieuChinhVatTu.Text = "Hiệu chỉnh";
             this.btnHieuChinhVatTu.Click += new System.EventHandler(this.btnHieuChinhVatTu_Click);
+            // 
+            // cT_BACSI_CHUATRI_BENHNHANTableAdapter
+            // 
+            this.cT_BACSI_CHUATRI_BENHNHANTableAdapter.ClearBeforeFill = true;
             // 
             // FormChuaTriChoBenhNhan
             // 
@@ -1001,19 +1013,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ngayChuaTriDateEdit.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ngayChuaTriDateEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cT_BACSI_CHUATRI_BENHNHANBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SP_ChuaTriBenhNhanBDS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKQ.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.thoiGianChuaTriSpinEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ngayChuaTriDateEdit.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ngayChuaTriDateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaSCT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaBN.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaBS.Properties)).EndInit();
@@ -1075,7 +1088,6 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.TextEdit txtKQ;
         private DevExpress.XtraEditors.SpinEdit thoiGianChuaTriSpinEdit;
-        private DevExpress.XtraEditors.DateEdit ngayChuaTriDateEdit;
         private DevExpress.XtraEditors.TextEdit txtMaSCT;
         private DevExpress.XtraEditors.TextEdit txtMaBN;
         private DevExpress.XtraEditors.TextEdit txtMaBS;
@@ -1109,5 +1121,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn donGiaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn thoiGianDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource cT_BACSI_CHUATRI_BENHNHANBindingSource;
+        private HOSPITALDataSetTableAdapters.CT_BACSI_CHUATRI_BENHNHANTableAdapter cT_BACSI_CHUATRI_BENHNHANTableAdapter;
+        private DevExpress.XtraEditors.DateEdit ngayChuaTriDateEdit;
     }
 }

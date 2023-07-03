@@ -37,6 +37,8 @@ namespace BENHVIEN
 
         private void FormChuaTriChoBenhNhan_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'DS.CT_BACSI_CHUATRI_BENHNHAN' table. You can move, or remove it, as needed.
+            this.cT_BACSI_CHUATRI_BENHNHANTableAdapter.Fill(this.DS.CT_BACSI_CHUATRI_BENHNHAN);
 
             DS.EnforceConstraints = false;
             this.SP_ChuaTriBenhNhanTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -82,7 +84,7 @@ namespace BENHVIEN
             this.txtMaBN.Text = Program.maBNCanChua;
             this.txtMaBS.Text = Program.userName;
             this.txtMaBS.ReadOnly = true;
-            this.ngayChuaTriDateEdit.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            this.ngayChuaTriDateEdit.Text = DateTime.Now.ToString("MM/dd/yyyy");
         }
 
         private void btnLAMMOI_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -383,6 +385,7 @@ namespace BENHVIEN
                     string.Format("INSERT INTO DBO.CT_BACSI_CHUATRI_BENHNHAN(MaBacSi, MaBenhNhan, MaSuChuaTri, NgayChuaTri, ThoiGianChuaTri, KetQua) " +
                     "VALUES('{0}', '{1}', '{2}', '{3}', NULL, N'{4}')",
                  Program.userName, Program.maBNCanChua, MaSCTCu, NgayChuaTriCu, KetQuaCu);
+                
             }
             else
             {
@@ -390,6 +393,8 @@ namespace BENHVIEN
                     string.Format("INSERT INTO DBO.CT_BACSI_CHUATRI_BENHNHAN(MaBacSi, MaBenhNhan, MaSuChuaTri, NgayChuaTri, ThoiGianChuaTri, KetQua) " +
                     "VALUES('{0}', '{1}', '{2}', '{3}', '{4}', N'{5}')",
                      Program.userName, Program.maBNCanChua, MaSCTCu, NgayChuaTriCu, Program.formatSpinEdit(ThoiGianChuaTriCu), KetQuaCu);
+              
+
             }
             undoList.Push(queryUndo);
             String query = string.Format("DELETE FROM CT_BACSI_CHUATRI_BENHNHAN WHERE MaCTBSCTBN = {0}", MaCTBSCTBNCu);
@@ -445,7 +450,7 @@ namespace BENHVIEN
             dangThemMoiCTHD = true;
             CT_HoaDonBDS.AddNew();
 
-            this.thoiGianDateEdit.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            this.thoiGianDateEdit.Text = DateTime.Now.ToString("MM/dd/yyyy");
         }
 
         private void txtMaBS_EditValueChanged(object sender, EventArgs e)
@@ -647,13 +652,18 @@ namespace BENHVIEN
         {
             string queryUndo = string.Format("INSERT INTO DBO.CT_HOADON VALUES('{0}', (SELECT MaCTBSCTBN FROM CT_BACSI_CHUATRI_BENHNHAN WHERE MaBacSi = '{1}' " +
                 "AND MaBenhNhan = '{2}' AND MaSuChuaTri = '{3}' AND NgayChuaTri = '{4}'), " +
-                "{5}, {6}, '{7}')",
-                txtMaVT.Text, Program.userName, Program.maBNCanChua, txtMaSCT.Text, ngayChuaTriDateEdit.Text, Program.formatSpinEdit(soLuongSpinEdit.Text), Program.formatSpinEdit(donGiaSpinEdit.Text),thoiGianDateEdit.Text);
+                "'{5}', {6}, {7})",
+                txtMaVT.Text, Program.userName, Program.maBNCanChua, txtMaSCT.Text, ngayChuaTriDateEdit.Text.ToString(), thoiGianDateEdit.Text, Program.formatSpinEdit(soLuongSpinEdit.Text), Program.formatSpinEdit(donGiaSpinEdit.Text));
             CT_HoaDonBDS.RemoveCurrent();
 
             CT_HoaDonTableAdapter.Update(DS.CT_HOADON);
             undoList.Push(queryUndo);
             btnXOA.Enabled = true;
+        }
+
+        private void ngayChuaTriDateEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

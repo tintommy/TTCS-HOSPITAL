@@ -173,6 +173,7 @@ namespace BENHVIEN
                         /*cập nhật lại trạng thái thêm mới cho chắc*/
                         dangThemMoi = false;
                         MessageBox.Show("Ghi thành công", "Thông báo", MessageBoxButtons.OK);
+                        btnXOA.Enabled = true;
                     }
                     catch (Exception ex)
                     {

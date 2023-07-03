@@ -33,31 +33,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v22.2" />
-    <Reference Include="DevExpress.Charts.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.CodeParser.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v22.2.Core, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v22.2, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v22.2" />
     <Reference Include="DevExpress.Data.v22.2" />
-    <Reference Include="DevExpress.DataAccess.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Office.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Pdf.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.PivotGrid.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v22.2, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v22.2.Core, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v22.2.Core, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v22.2.Core, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v22.2.Core" />
-    <Reference Include="DevExpress.RichEdit.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v22.2.Export, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v22.2.Core, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v22.2.Export, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v22.2" />
-    <Reference Include="DevExpress.Utils.v22.2.UI, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Xpo.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v22.2.UI, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v22.2, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v22.2" />
     <Reference Include="DevExpress.Sparkline.v22.2.Core" />
-    <Reference Include="DevExpress.XtraCharts.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.2, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v22.2" />
     <Reference Include="DevExpress.Drawing.v22.2" />
-    <Reference Include="DevExpress.XtraGauges.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v22.2.Extensions, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v22.2.Core, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v22.2, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v22.2.Extensions, Version=22.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -111,6 +111,12 @@
     </Compile>
     <Compile Include="FormChon\FormChonBenhNhanChuaTri.Designer.cs">
       <DependentUpon>FormChonBenhNhanChuaTri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChon\FormChonBenhNhanInHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChon\FormChonBenhNhanInHoaDon.designer.cs">
+      <DependentUpon>FormChonBenhNhanInHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="FormChon\FormChonGiuong.cs">
       <SubType>Form</SubType>
@@ -232,6 +238,12 @@
     <Compile Include="FormVattu.Designer.cs">
       <DependentUpon>FormVattu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormXemBNTheoDoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormXemBNTheoDoi.Designer.cs">
+      <DependentUpon>FormXemBNTheoDoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormYTa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,6 +302,12 @@
     <Compile Include="Report\ReportBNNoiTruTheoThangTheoKhu.Designer.cs">
       <DependentUpon>ReportBNNoiTruTheoThangTheoKhu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\ReportSLVTDaSuDungChoViecChuaTri.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ReportSLVTDaSuDungChoViecChuaTri.designer.cs">
+      <DependentUpon>ReportSLVTDaSuDungChoViecChuaTri.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormBackup.resx">
       <DependentUpon>FormBackup.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormChon\FormChonBenhNhanChuaTri.resx">
       <DependentUpon>FormChonBenhNhanChuaTri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChon\FormChonBenhNhanInHoaDon.resx">
+      <DependentUpon>FormChonBenhNhanInHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormChon\FormChonGiuong.resx">
       <DependentUpon>FormChonGiuong.cs</DependentUpon>
@@ -371,6 +392,9 @@
     <EmbeddedResource Include="FormVattu.resx">
       <DependentUpon>FormVattu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormXemBNTheoDoi.resx">
+      <DependentUpon>FormXemBNTheoDoi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormYTa.resx">
       <DependentUpon>FormYTa.cs</DependentUpon>
     </EmbeddedResource>
@@ -404,6 +428,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\ReportBNNoiTruTheoThangTheoKhu.resx">
       <DependentUpon>ReportBNNoiTruTheoThangTheoKhu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportSLVTDaSuDungChoViecChuaTri.resx">
+      <DependentUpon>ReportSLVTDaSuDungChoViecChuaTri.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="HOSPITALDataSet.xsc">

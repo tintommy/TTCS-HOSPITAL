@@ -66,10 +66,10 @@ namespace BENHVIEN
             Program.formMain.HOTEN.Text = "HỌ TÊN: " + Program.staff;
             Program.formMain.QUYEN.Text = "Quyền: " + Program.role;
 
-            if (Program.role == "db_owner")
+         /*   if (Program.role == "db_owner")
             {
                 Program.formMain.QUYEN.Text = "Quyền: ADMIN ";
-            }
+            }*/
 
             this.Visible = false;
 
